@@ -64,7 +64,17 @@ class PizzaPeter(
                 "${drinkSaleCount * drinkSalePrice}\n" +
                 "Процент клиентов, взявших кофе: $procentSelDrink\n\n"
 
-        return txtDrinks
+        val valuePopulPizza = maxOf(neapolitanPizzaWithCoffe,romanPizzaWithCoffe,sicilianPizzaWithCoffe, tyroleanPizzaWithCoffe)
+        val populPizza = when {
+            valuePopulPizza == neapolitanPizzaWithCoffe -> "Неополетанская пицца"
+            valuePopulPizza == romanPizzaWithCoffe -> "Романская пицца"
+            valuePopulPizza == sicilianPizzaWithCoffe -> "Сицилийская пицца"
+            valuePopulPizza == tyroleanPizzaWithCoffe -> "Торильская пицца"
+            else -> ""
+        }
+        val txtPopularPizza = "Самая популярная пицца с кофе: $populPizza\n\n"
+
+        return txtDrinks + txtPopularPizza
     }
     fun checkFalse(){
         checkRomanPizz = false

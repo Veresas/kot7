@@ -37,9 +37,9 @@ abstract class PizzaCity (
 
      fun showStatistics() {
         println("Продано сицилийской пиццы: $sicilianPizzaCount")
-        println("Продано сицилийской пиццы: $neapolitanPizzaCount")
-        println("Продано сицилийской пиццы: $romanPizzaCount")
-        println("Продано сицилийской пиццы: $tyroleanPizzaCount")
+        println("Продано неополетанской пиццы: $neapolitanPizzaCount")
+        println("Продано романской пиццы: $romanPizzaCount")
+        println("Продано торильской пиццы: $tyroleanPizzaCount")
 
         val money = (neapolitanPizzaCount * neapolitanPizzaPrice + romanPizzaCount * romanPizzaPrice +
                 sicilianPizzaCount * sicilianPizzaPrice + tyroleanPizzaCount * tyroleanPizzaPrice +

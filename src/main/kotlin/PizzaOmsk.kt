@@ -1,3 +1,5 @@
+import kotlin.math.max
+
 class PizzaOmsk(
     neapolitanPizzaPrice: Double, romanPizzaPrice: Double,
     sicilianPizzaPrice: Double, tyroleanPizzaPrice: Double
@@ -90,11 +92,21 @@ class PizzaOmsk(
                 "${drinkSaleCount * drinkSalePrice}\n" +
                 "Процент клиентов, взявших кофе: $procentSelDrink\n\n"
 
+        val valuePopulPizza = maxOf(neapolitanPizzaWithCoffe,romanPizzaWithCoffe,sicilianPizzaWithCoffe, tyroleanPizzaWithCoffe)
+        val populPizza = when {
+            valuePopulPizza == neapolitanPizzaWithCoffe -> "Неополетанская пицца"
+            valuePopulPizza == romanPizzaWithCoffe -> "Романская пицца"
+            valuePopulPizza == sicilianPizzaWithCoffe -> "Сицилийская пицца"
+            valuePopulPizza == tyroleanPizzaWithCoffe -> "Торильская пицца"
+            else -> ""
+        }
+        val txtPopularPizza = "Самая популярная пицца с кофе: $populPizza\n\n"
+
         val txtSouce = "Проданно соусов: ${sauceTomatoCount + sauceOnioCount}\n" +
                 "Выручка с томатного соуса ${sauceTomatoCount * sauceTomatoPrice}\n" +
                 "Выручка с чесночного соуса ${sauceOnioCount * sauceOnioPrice}"
 
-        return  txtPhoto + txtDrinks + txtSouce
+        return  txtPhoto + txtDrinks + txtPopularPizza + txtSouce
 
     }
     fun checkFalse(){
